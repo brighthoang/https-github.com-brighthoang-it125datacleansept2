@@ -9,8 +9,8 @@ df.to_csv(r'output.csv', index = False)
 
 products = df["products"]
 products = products.str.lower()
-p = Counter(" ".join(products).split()).most_common(6)
-rslt = pd.DataFrame(p, columns=['Product', 'Frequency'])
-rslt2 = rslt.drop(rslt.index[0])
+x = Counter(" ".join(products).split()).most_common(6)
+top5 = pd.DataFrame(x, columns=['Product', 'Frequency'])
+newtop5 = top5.drop(top5.index[0])
 
-print("top 5 products bought:\n\n", rslt2)
+print("top 5 products bought:\n\n", newtop5)
